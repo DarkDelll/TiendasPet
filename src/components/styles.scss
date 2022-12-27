@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body, #root{
+    height: 100%;
+}
+#root {
+    display: flex;
+    flex-direction: column;
+}
+.Header{
+    background-image: linear-gradient(to right,#5800FF,#E900FF);
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.7rem;
+    &__nav{
+        a{  
+            font-size: 20px;
+            text-decoration: none;
+            color: white;
+            margin-left: 1rem;
+        }
+    }
+    
+}
+main {
+    flex-grow: 1;
+    padding: 0.7rem;
+}
+footer {
+    background-image: linear-gradient(to left,#5800FF,#E900FF);
+    color: white;
+    padding: 0.7rem;
+}
