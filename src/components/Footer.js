@@ -1,8 +1,15 @@
+import { BottomNavigation, BottomNavigationAction, Paper } from '@mui/material'
 import React from 'react'
 
 const Footer = () => {
   return (
-    <footer>Creado el 2022 &copy; </footer>
+    <Paper sx={{ position: 'relative', bottom: 0, left: 0, right: 0 }} elevation={3}>
+        <BottomNavigation
+          showLabels
+        >
+          <BottomNavigationAction label="Creado el &copy; 2023 "  />
+        </BottomNavigation>
+      </Paper>
   )
 }
 

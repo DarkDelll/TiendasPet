@@ -4,15 +4,33 @@ import Footer from './Footer';
 import Header from './Header';
 import ItemListContainer from './ItemListContainer';
 import Main from './Main';
+import {createTheme, ThemeProvider} from '@mui/material'
+import { BrowserRouter } from 'react-router-dom';
+
+const theme = createTheme({
+    palette: {
+      primary: {
+        main: '#A8577E',
+        darker: '#77dd77'},
+      secondary: {
+        main: '#D01616',
+        darker:'#ff8097'
+      },
+      buttoncolor:{
+      main: '#3B429F',
+      contrastText:'#fff'}}
+    
+})
 
 function App() {
   return (
-    <>
-    <Header/>
-    <ItemListContainer greetings="Bienvenidos a la tienda"/>
-    <Main/>
-    <Footer/>
-    </>
+  <BrowserRouter>
+    <ThemeProvider theme={theme}>
+      <Header/>
+      <Main/>
+      <Footer/>
+    </ThemeProvider>
+  </BrowserRouter>
   )
 }
 
