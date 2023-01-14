@@ -1,10 +1,7 @@
-
-import './App.css';
 import Footer from './Footer';
 import Header from './Header';
-import ItemListContainer from './ItemListContainer';
 import Main from './Main';
-import {createTheme, ThemeProvider} from '@mui/material'
+import { createTheme, ThemeProvider} from '@mui/material'
 import { BrowserRouter } from 'react-router-dom';
 
 const theme = createTheme({
@@ -18,7 +15,11 @@ const theme = createTheme({
       },
       buttoncolor:{
       main: '#3B429F',
-      contrastText:'#fff'}}
+      contrastText:'#fff',
+      },
+      drawer:{
+      main:'#FFF'}},
+    
     
 })
 
