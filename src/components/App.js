@@ -3,6 +3,7 @@ import Header from './Header';
 import Main from './Main';
 import { createTheme, ThemeProvider} from '@mui/material'
 import { BrowserRouter } from 'react-router-dom';
+import CustomProvider from './CustomProvider';
 
 const theme = createTheme({
     palette: {
@@ -25,13 +26,15 @@ const theme = createTheme({
 
 function App() {
   return (
-  <BrowserRouter>
-    <ThemeProvider theme={theme}>
-      <Header/>
-      <Main/>
-      <Footer/>
-    </ThemeProvider>
-  </BrowserRouter>
+  <CustomProvider>
+    <BrowserRouter>
+      <ThemeProvider theme={theme}>
+        <Header/>
+        <Main/>
+        <Footer/>
+      </ThemeProvider>
+    </BrowserRouter>
+  </CustomProvider>
   )
 }
 

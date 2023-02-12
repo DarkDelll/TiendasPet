@@ -1,8 +1,21 @@
-import { Grid, CardMedia, Card, Typography, Box, Button } from '@mui/material'
+import { Grid, CardMedia, Card, Typography, Box } from '@mui/material'
 import { Container } from '@mui/system'
 import React from 'react'
+import { useCarrito } from './CustomProvider'
+import ItemQuantitySelector from './ItemQuantitySelector'
+
+
 
 const ItemDetail = ({producto}) => {
+  const {onAddProduct} = useCarrito()
+  const stock = 5
+
+  const onAdd = (param)=>{
+    onAddProduct(producto.image,producto.id,producto.title,param,stock)
+    
+  }
+
+  
   return (
     <Container sx={{height:'100%'}}>
       <Grid container display='flex' alignContent='center' >
@@ -17,7 +30,7 @@ const ItemDetail = ({producto}) => {
         <Box width='350px' sx={{display:'flex', flexDirection:'column',}}>
         <Typography variant='h5' sx={{p:2}}>{producto.title}</Typography>
         <Typography variant='body2'sx={{p:2}}>{producto.description}</Typography>
-        <Button variant='contained' color='buttoncolor' sx={{p:1}}>Agregar Al Carrito</Button>
+        <ItemQuantitySelector stock={stock} onAdd={onAdd} />
         </Box>
         </Grid>
       </Grid>

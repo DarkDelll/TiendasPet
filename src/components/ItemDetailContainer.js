@@ -8,19 +8,20 @@ const ItemDetailContainer = () => {
   
   useEffect(()=>{
     const productid = params.id ? '/'+ params.id : '/'
-    const pedido = fetch('https://fakestoreapi.com/products'+ productid)
+     const pedido = fetch('https://fakestoreapi.com/products'+ productid)
 
-    pedido
-          .then((respuesta)=>{
-          const producto = respuesta.json()
-          return producto
-        })
-        .then((producto)=>{
+     pedido
+           .then((respuesta)=>{
+           const producto = respuesta.json()
+           return producto
+         })
+         .then((producto)=>{
           setProductos(producto)
-        })
-        .catch((error)=>{
-          console.log(error)
-        })
+         })
+         .catch((error)=>{
+           console.log(error)
+         })
+    
 
   }, [params])
 

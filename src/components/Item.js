@@ -2,15 +2,20 @@ import { AddShoppingCart } from '@mui/icons-material'
 import { Button, Card, CardActions, CardContent,  CardMedia, Fade, Typography } from '@mui/material'
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useCarrito } from './CustomProvider'
 
-export const Item = ({producto}) => {
+ const Item = ({producto}) => {
+  const stock = 5
   const [handleMouse, setHandlemouse] = useState(false)
-   
+  const {onAddProduct} = useCarrito()
   const mouseEnter = ()=>{
     setHandlemouse(true)
   }
   const mouseLeave = ()=>{
     setHandlemouse(false)
+  }
+  const handleClickAdd = ()=>{
+    onAddProduct(producto.image,producto.id,producto.title,1,stock)
   }
 
   return (
@@ -29,7 +34,7 @@ export const Item = ({producto}) => {
              <Typography variant="h6" color="secondary">{'$'+producto.price}</Typography>
             <Typography variant="body2" color="inherit" align="center" noWrap >{producto.title} </Typography>
             <CardActions>
-                <Button fullWidth variant='contained' color='buttoncolor' endIcon={<AddShoppingCart/>}>Agregar</Button> 
+                <Button fullWidth variant='contained' color='buttoncolor' onClick={handleClickAdd} endIcon={<AddShoppingCart/>}>Agregar</Button> 
             </CardActions>
           </CardContent>
         </Card>
@@ -37,3 +42,5 @@ export const Item = ({producto}) => {
     </div>
   )
 }
+
+export default Item

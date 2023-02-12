@@ -14,20 +14,21 @@ const ItemListContainer = () => {
   
   useEffect(()=>{
     const categoria = params.category ? '/category/'+ params.category : '/'
-    const pedido = fetch('https://fakestoreapi.com/products'+ categoria)
+     const pedido = fetch('https://fakestoreapi.com/products'+ categoria)
 
-    pedido
-          .then((respuesta)=>{
-          const productos = respuesta.json()
-          return productos
-        })
-        .then((productos)=>{
-          setProductos(productos)
-          setCargando(true)
-        })
-        .catch((error)=>{
-          console.log(error)
-        })
+     pedido
+           .then((respuesta)=>{
+           const productos = respuesta.json()
+           return productos
+         })
+         .then((productos)=>{
+           setProductos(productos)
+           setCargando(true)
+         })
+         .catch((error)=>{
+           console.log(error)
+         })
+    
 
   }, [params])
 
@@ -38,7 +39,7 @@ const ItemListContainer = () => {
     <div>
        <Box display="center" justifyContent="center" sx={{p:1}}><Typography variant='h4'>{nuestrosProductos}</Typography></Box>
       <Grid container justifyContent='center' alignItems='center' spacing={1} sx={{margin:'20px 4px 10px 4px'}}>
-        {cargando ? '' : 'cargando los productos...'}
+        {cargando ? null : 'cargando los productos...'}
       <ItemList productos={productos}/>
       </Grid>
     </div>
