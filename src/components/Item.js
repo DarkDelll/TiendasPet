@@ -38,7 +38,6 @@ import { useCarrito } from './CustomProvider'
             </CardActions>
           </CardContent>
         </Card>
-
     </div>
   )
 }

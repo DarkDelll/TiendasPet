@@ -30,6 +30,7 @@ const ItemDetail = ({producto}) => {
         <Box width='350px' sx={{display:'flex', flexDirection:'column',}}>
         <Typography variant='h5' sx={{p:2}}>{producto.title}</Typography>
         <Typography variant='body2'sx={{p:2}}>{producto.description}</Typography>
+        <Typography variant='overline'sx={{p:2}}>stock: {stock} disponibles</Typography>
         <ItemQuantitySelector stock={stock} onAdd={onAdd} />
         </Box>
         </Grid>

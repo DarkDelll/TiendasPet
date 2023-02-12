@@ -37,11 +37,13 @@ const ItemListContainer = () => {
 
   return (
     <div>
+      <Box display='flex' flexDirection='column' justifyContent='center' alignContent='center'>
        <Box display="center" justifyContent="center" sx={{p:1}}><Typography variant='h4'>{nuestrosProductos}</Typography></Box>
       <Grid container justifyContent='center' alignItems='center' spacing={1} sx={{margin:'20px 4px 10px 4px'}}>
         {cargando ? null : 'cargando los productos...'}
       <ItemList productos={productos}/>
       </Grid>
+      </Box>
     </div>
   )
 }

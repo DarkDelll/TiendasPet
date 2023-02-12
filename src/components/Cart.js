@@ -3,7 +3,7 @@ import React from 'react'
 import { useCarrito } from './CustomProvider'
 import ClearIcon from '@mui/icons-material/Clear';
 
-const CartContext = () => {
+const Cart = () => {
   const {carrito, deleteProduct,emptyCart} = useCarrito()
 
   return (
@@ -11,7 +11,7 @@ const CartContext = () => {
       <Box sx={{maxWidth:1500}}>
       <Grid container display='flex'  flexDirection='column' >
         <Box display="center" justifyContent="center" sx={{p:1}}>
-      <Typography variant="h3" color="black">Carrito de compras</Typography>
+      <Typography variant="h4" color="black">Carrito de compras</Typography>
         </Box>
       {carrito.map((producto)=>{
         const handleDelete = ()=>{
@@ -33,6 +33,7 @@ const CartContext = () => {
       })}
       <Box display="flex" justifyContent="flex-end"  sx={{p:2, mr:2}}>
         <Button variant='contained' color='buttoncolor' onClick={emptyCart}>Vaciar Carrito</Button>
+        <Button variant='contained' color='buttoncolor' >Finalizar Compra</Button>
         </Box>
       </Grid>
       </Box>
@@ -40,4 +41,4 @@ const CartContext = () => {
   )
 }
 
-export default CartContext
+export default Cart

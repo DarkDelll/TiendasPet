@@ -24,7 +24,8 @@ const CustomProvider = ({children}) => {
             const cantidadprod= totalProductos
             carrito.map((x)=>{
                 if(productId===x.id){
-                    if (x.cantidad < producto.stock){
+                        const cantidadTotal = x.cantidad + productQty 
+                    if (cantidadTotal <= producto.stock){
                         setTotalProductos(cantidadprod + productQty)
                         x.cantidad += productQty      
                     }    

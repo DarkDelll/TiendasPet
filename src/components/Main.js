@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-import CartContext from './CartContext'
+import Cart from './Cart'
 import ItemDetailContainer from './ItemDetailContainer'
 import ItemListContainer from './ItemListContainer'
 
@@ -12,7 +12,7 @@ const Main = () => {
                 <Route path="/" element={<ItemListContainer/>}/>
                 <Route path="/products/:category" element={<ItemListContainer/>}/>
                 <Route path="/item/:id" element={<ItemDetailContainer/>}/>
-                <Route path="/carrito" element={<CartContext/>}/>
+                <Route path="/carrito" element={<Cart/>}/>
           </Routes>
     </main>
   )
