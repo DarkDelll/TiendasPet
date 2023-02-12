@@ -28,6 +28,6 @@ Luego, para iniciar la visualización con el comando:
 
 `npm start`
 
-###Previsualización
+### Previsualización
 
 Se puede visualizar el sitio desde [Tienda Pet](https://luminous-belekoy-c7967d.netlify.app/)
